@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact - SkillCraft Interactive Navigation Demonstration">
+  <title>Contact Us - SkillCraft Interactive Navigation</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>">
+</head>
+<body>
+
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- FIXED NAVIGATION HEADER (Visible on All Pages) -->
+  <header class="site-header" id="site-header">
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="index.html" class="nav-brand" id="nav-brand">
+        <div class="brand-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
+        </div>
+        <span class="brand-text">SkillCraft</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+
+      <div class="nav-menu-wrapper">
+        <ul class="nav-list" id="nav-list">
+          <div class="nav-indicator-pill" id="nav-indicator-pill"></div>
+
+          <li class="nav-item">
+            <a href="index.html" class="nav-link" id="nav-link-home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link" id="nav-link-about">About</a>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="services.html" class="nav-link" id="nav-link-services">
+              Services
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <ul class="nav-dropdown">
+              <li>
+                <a href="services.html#web" class="dropdown-link">
+                  <div class="dropdown-icon">⚡</div>
+                  <div>
+                    <span class="dropdown-text-title">Web Development</span>
+                    <span class="dropdown-text-desc">High-speed modern websites</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="services.html#ui" class="dropdown-link">
+                  <div class="dropdown-icon">🎨</div>
+                  <div>
+                    <span class="dropdown-text-title">UI / UX Design</span>
+                    <span class="dropdown-text-desc">Intuitive & captivating interfaces</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="services.html#cloud" class="dropdown-link">
+                  <div class="dropdown-icon">☁️</div>
+                  <div>
+                    <span class="dropdown-text-title">Cloud Solutions</span>
+                    <span class="dropdown-text-desc">Scalable serverless infrastructure</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#features" class="nav-link" id="nav-link-features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link active" id="nav-link-contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <select class="style-switch-select" id="style-select" aria-label="Select Navbar Style">
+          <option value="default">Style: Glassmorphism</option>
+          <option value="neon">Style: Cyber Neon</option>
+          <option value="aurora">Style: Aurora Glow</option>
+          <option value="minimal">Style: Minimalist</option>
+        </select>
+
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+        </button>
+
+        <a href="contact.html" class="btn-cta">
+          <span>Get In Touch</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-backdrop" id="mobile-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div>
+      <div style="margin-bottom: 2rem;">
+        <span class="brand-text" style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;">SkillCraft</span>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home Page <span>→</span></a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Page <span>→</span></a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services Page <span>→</span></a></li>
+        <li><a href="contact.html" class="mobile-nav-link active">Contact Page <span>→</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="contact.html" class="btn-cta" style="width: 100%; justify-content: center;">Contact Us</a>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main>
+    <section class="section hero-section" style="min-height: 50vh;">
+      <div class="container hero-content">
+        <div class="hero-pill-tag">
+          <span class="hero-pill-dot"></span>
+          <span>Contact Page</span>
+        </div>
+        <h1 class="hero-title">
+          Connect <span class="gradient-text">With Us</span>
+        </h1>
+        <p class="hero-subtitle">
+          Have questions or thoughts? Drop a message below while enjoying the persistent fixed navigation menu.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0; min-height: 70vh;">
+      <div class="container">
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Full Name</label>
+            <input type="text" class="form-input" id="contact-name" placeholder="Alex Morgan" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email Address</label>
+            <input type="email" class="form-input" id="contact-email" placeholder="alex@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Subject</label>
+            <input type="text" class="form-input" id="contact-subject" placeholder="Feedback on Navigation Menu" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Your Message</label>
+            <textarea class="form-textarea" id="contact-message" rows="5" placeholder="Share your experience..." required></textarea>
+          </div>
+          <button type="submit" class="btn-cta" style="width: 100%; justify-content: center;">Send Direct Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="live-scroll-status" id="live-scroll-status">
+    <div class="status-indicator-dot"></div>
+    <span id="scroll-status-text">Navbar: Top (Transparent)</span>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p class="footer-copy">© 2026 SkillCraft Technology Internship • Contact Page Demonstration</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
